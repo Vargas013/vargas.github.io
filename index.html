@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Alojamiento Web</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">Inicio</a>
+            </div>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Buscar..." onkeyup="searchPages()">
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="Arquitectura.html">Arquitectura</a></li>
+                <li><a href="Alojamiento.html">Alojamiento</a></li>
+                <li><a href="Tipos.html">Tipos</a></li>
+                <li><a href="Ventajas.html">Ventajas</a></li>
+                <li><a href="Proveedores.html">Proveedores</a></li>
+                <li><a href="Xampp.html">XAMPP</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="content">
+        <h1>Bienvenido al Curso de Alojamiento Web</h1>
+        <div class="index-grid">
+            <div class="grid-item">
+                <h2>Arquitectura Cliente/Servidor</h2>
+                <p>Aprende sobre la base de las aplicaciones web modernas.</p>
+                <a href="Arquitectura.html" class="btn">Ver más</a>
+            </div>
+            <div class="grid-item">
+                <h2>Alojamiento Web</h2>
+                <p>Descubre qué es el hosting y cómo funciona.</p>
+                <a href="Alojamiento.html" class="btn">Ver más</a>
+            </div>
+            <div class="grid-item">
+                <h2>Tipos de Alojamiento</h2>
+                <p>Conoce las diferentes opciones de hosting disponibles.</p>
+                <a href="Tipos.html" class="btn">Ver más</a>
+            </div>
+            <div class="grid-item">
+                <h2>Ventajas y Desventajas</h2>
+                <p>Analiza los pros y contras del alojamiento web.</p>
+                <a href="Ventajas.html" class="btn">Ver más</a>
+            </div>
+            <div class="grid-item">
+                <h2>Proveedores</h2>
+                <p>Explora los principales proveedores de hosting.</p>
+                <a href="Proveedores.html" class="btn">Ver más</a>
+            </div>
+            <div class="grid-item">
+                <h2>XAMPP</h2>
+                <p>Aprende sobre el entorno de desarrollo local.</p>
+                <a href="Xampp.html" class="btn">Ver más</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    function searchPages() {
+        const input = document.getElementById('searchInput');
+        const filter = input.value.toLowerCase();
+        const links = document.getElementById('navLinks').getElementsByTagName('a');
+        
+        for (let link of links) {
+            const text = link.textContent || link.innerText;
+            if (text.toLowerCase().indexOf(filter) > -1) {
+                link.parentElement.style.display = "";
+            } else {
+                link.parentElement.style.display = "none";
+            }
+        }
+    }
+    </script>
+</body>
+</html>
